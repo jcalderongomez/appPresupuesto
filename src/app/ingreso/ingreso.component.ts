@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Ingreso } from './ingreso.model';
+import { IngresoServicio } from './ingreso.service';
 
 @Component({
   selector: 'app-ingreso',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IngresoComponent implements OnInit {
 
-  constructor() { }
+  ingresos: Ingreso[]= [];
+  constructor(private ingresosServicio:IngresoServicio) { }
 
   ngOnInit(): void {
+    this.ingresos = this.ingresosServicio.ingresos;
+  }
+
+  eliminarRegistro(ingreso: Ingreso){
+    this.ingresosServicio.eliminar(ingreso);
   }
 
 }

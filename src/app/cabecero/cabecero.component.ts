@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cabecero',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cabecero.component.css']
 })
 export class CabeceroComponent implements OnInit {
+  @Input() presupuestoTotal: number = 10000;
+  @Input() ingresoTotal: number = 50000;
+  @Input() egresoTotal: number= 5000;
+  @Input() porcentajeTotal: number= 20000;
 
   constructor() { }
 
